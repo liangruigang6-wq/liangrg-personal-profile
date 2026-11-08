@@ -2,9 +2,13 @@
 
 跨 AI 共享的个人档案入口。本文件供不同的 AI 助手在首次会话时读取，避免每次重复交代背景设定。
 
+- 仓库地址：https://github.com/liangruigang6-wq/liangrg-personal-profile
+- 待办看板：https://github.com/users/liangruigang6-wq/projects/1
+- 供 AI 直接读取：https://raw.githubusercontent.com/liangruigang6-wq/liangrg-personal-profile/main/README.md
+
 ```yaml
 schema: personal-profile/v1
-owner: liangrg
+owner: liangruigang6-wq
 visibility: public
 language: zh-CN
 last_updated: 2026-11-08

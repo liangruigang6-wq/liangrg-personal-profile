@@ -18,3 +18,11 @@
 
 - `docs/SETUP.md`：记录 GitHub 连接器按需安装失败的诊断结论；补充 `winget install --id GitHub.cli` 路径；明确改走不依赖连接器的方式 A 与方式 B。
 
+## v0.2 — 2026-11-08
+
+- 远端公开仓库创建并推送：`https://github.com/liangruigang6-wq/liangrg-personal-profile`，默认分支 `main`。
+- `README.md`：写入实际仓库地址、待办看板与 raw 地址；`owner` 由占位值更正为账户名 `liangruigang6-wq`。
+- `docs/SETUP.md`：由待办清单改为配置记录，补入实际执行命令、执行结果，以及「未启用 PR 审批」的取舍说明。
+- 两次本地提交的作者由占位身份更正为账户 noreply 身份，远端提交已核实归属到 `liangruigang6-wq`。
+- 远端配置：Issues 开启；新增 `profile` / `todo` / `correction` 标签；建立 Issue #1~#3 并关联 Projects 看板「个人档案维护」（表格视图 + 看板视图，Status 为 Todo / In Progress / Done）；`main` 分支保护生效。
+
