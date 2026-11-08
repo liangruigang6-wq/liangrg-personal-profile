@@ -4,6 +4,16 @@
 
 > 约定：下文 `<用户名>` 需要替换为本人 GitHub 用户名。当前会话未获知该用户名，此处不作推测。
 
+## 关于「连接失败」的处理（2026-11-08 核实）
+
+本次尝试推荐安装 GitHub 连接器时返回 `on-demand install failed: fetch failed`，该连接器至今未出现在已安装列表中。本机诊断结果如下：
+
+- 可验证的事实：本机设置了指向 `127.0.0.1` 的本地代理；`api.github.com`、`github.com`、`cli.github.com`、`registry.npmjs.org` 均返回 HTTP 200；`github.com` 的 DNS 解析正常；`winget` 可用。
+- 由上述事实可以判断：到 GitHub 的网络链路正常，失败发生在 WorkBuddy 连接器插件包的按需拉取环节，不在 GitHub 侧。
+- 无法查证的部分：插件市场服务的具体地址与失败根因，本次没有取得服务端日志，因此不作结论。
+
+因此**不要继续重试连接器安装**。下面的方式 A 与方式 B 都不依赖该连接器。
+
 ---
 
 ## 步骤 1：创建公开仓库
@@ -25,6 +35,14 @@ https://github.com/new?name=liangrg-personal-profile&visibility=public&owner=@me
 **不要勾选** "Add a README file"、.gitignore 或 license，因为本地已经准备好这些内容；勾选会与后续推送产生分叉。该注意事项在官方文档中亦有说明：导入既有仓库时不要预填这些可选项 (同上)。
 
 ### 方式 B：GitHub CLI
+
+本机目前没有 `gh`，但 `winget` 可用。安装系统软件需要本人确认，本次未执行：
+
+```bash
+winget install --id GitHub.cli
+```
+
+安装后重新打开终端，先执行 `gh auth login`，按提示在浏览器完成账户授权（这一步必须由本人操作，我无法代为登录），再创建并推送仓库：
 
 ```bash
 gh auth login
