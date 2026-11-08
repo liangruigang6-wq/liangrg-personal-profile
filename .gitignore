@@ -1,0 +1,18 @@
+# 本地私有草稿：不提交到公开仓库
+private/
+*.local.md
+*.private.md
+
+# 编辑器与系统临时文件
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# 环境与密钥（防止误提交）
+.env
+.env.*
+*.pem
+*.key
